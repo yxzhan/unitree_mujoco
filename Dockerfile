@@ -14,6 +14,7 @@ RUN pip install mujoco pygame
 
 RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
+RUN pip install -U jupyter-remote-desktop-proxy
 # --- Copy notebooks --- #
 USER ${NB_USER}
 COPY --chown=${NB_USER}:users ./ /home/${NB_USER}/unitree_mujoco/
