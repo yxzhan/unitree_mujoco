@@ -12,6 +12,8 @@ RUN git clone https://github.com/unitreerobotics/unitree_sdk2_python.git && \
     pip install -e .
 RUN pip install mujoco pygame
 
+RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
 # --- Copy notebooks --- #
 USER ${NB_USER}
 COPY --chown=${NB_USER}:users ./ /home/${NB_USER}/unitree_mujoco/
